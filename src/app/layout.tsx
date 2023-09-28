@@ -1,7 +1,9 @@
-import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-
+import "./globals.css"
+import Header from './header'
+import { ToastContainer } from 'react-toastify'
+import "react-toastify/ReactToastify.css"
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -15,8 +17,18 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <>
+    <head>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    </head>
+     <html lang="en">
+      <body className={inter.className}>
+        <Header/>
+        {children}
+        <ToastContainer/>
+        </body>
     </html>
+    </>
+   
   )
 }
