@@ -1,6 +1,6 @@
 "use client";
 import React, { useState ,useRef} from "react";
-import { Form, Input, Button ,FormInstance} from "antd";
+import { Form, Input, Button ,FormInstance, Select} from "antd";
 import { toast } from "react-toastify";
 import { IP_URL } from "@/config";
 import Navbar from "../navbar";
@@ -25,12 +25,12 @@ export default function Create() {
   const [movie, setMovie] = useState<newMovie>({
     title: "",
     release_date: new Date(),
-    genre: "",
+    genre: "Action",
     director: "",
     actors: "",
     duration: "",
-    language: "",
-    country: "",
+    language: "English",
+    country: "USA",
     price: "",
     movie_url: "",
     image: "",
@@ -44,6 +44,16 @@ export default function Create() {
   const handleTextArea = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setMovie({ ...movie, description: e.target.value });
   };
+
+  const handleSelectGenre=(value:string)=>{
+    setMovie({...movie,genre:value})
+  }
+  const handleSelectLanguage=(value:string)=>{
+    setMovie({...movie,language:value})
+  }
+  const handleSelectCountry=(value:string)=>{
+    setMovie({...movie,country:value})
+  }
   const handleSubmitForm = () => {
     fetch(IP_URL + "admin/create", {
       method: "POST",
@@ -80,7 +90,7 @@ export default function Create() {
   };
   return (
     <>
-      <div className="mx-auto h-screen flex">
+      <div className="mx-auto h-screen flex pt-14">
         <div className="w-1/4 bg-gray-700 mr-5">
          <Navbar/>
         </div>
@@ -124,13 +134,49 @@ export default function Create() {
                       rules={[{ required: true, message: "Genre is required" }]}
                       hasFeedback
                     >
-                      <Input
-                        type="text"
-                        name="genre"
-                        className="text-gray-500 outline-none rounded py-2 px-3 w-full focus:outline-none focus:shadow-none shadow"
-                        placeholder="Enter genre of movie"
-                        onChange={handleInputForm}
-                      ></Input>
+                    <Select
+                    defaultValue="Action"
+                    options={[
+                      {
+                        label:"Genre",
+                        options:[
+                          {
+                            label:"Action",
+                            value:"Action"
+                          },
+                          {
+                            label:"Horror",
+                            value:"Horror"
+                          },
+                          {
+                            label:"Comedy",
+                            value:"Comedy"
+                          },
+                          {
+                            label:"Drama",
+                            value:"Drama"
+                          },
+                          {
+                            label:"Cartoon ",
+                            value:"Cartoon "
+                          },
+                          {
+                            label:"Blockbuster ",
+                            value:"Blockbuster "
+                          },
+                          {
+                            label:"Science fiction",
+                            value:"Science fiction"
+                          }
+                        ]
+
+                      }
+                    ]}
+                    className="text-gray-500 outline-none rounded py-2 px-3 w-full focus:outline-none focus:shadow-none shadow"
+                    onChange={handleSelectGenre}
+                    >
+
+                    </Select>
                     </Form.Item>
                   </div>
                   <div className="mb-4">
@@ -150,13 +196,45 @@ export default function Create() {
                       ]}
                       hasFeedback
                     >
-                      <Input
-                        type="text"
-                        name="language"
-                        className="rounded  outline-none w-full text-gray-500 py-2 px-3 focus:outline-none focus:shadow-none"
-                        placeholder="Enter language of movie"
-                        onChange={handleInputForm}
-                      ></Input>
+                    <Select
+                    defaultValue="English"
+                    options={[
+                      {
+                        label:"Language",
+                        options:[
+                          {
+                            label:"English",
+                            value:"English"
+                          },
+                          {
+                            label:"Chinese",
+                            value:"Chinese"
+                          },
+                          {
+                            label:"Japanese",
+                            value:"Japanese"
+                          },
+                          {
+                            label:"Korean",
+                            value:"Korean"
+                          },
+                          {
+                            label:"VietNam",
+                            value:"VietNam"
+                          },
+                          {
+                            label:"Thailand",
+                            value:"Thailand"
+                          }
+                        ]
+
+                      }
+                    ]}
+                    className="text-gray-500 outline-none rounded py-2 px-3 w-full focus:outline-none focus:shadow-none shadow"
+                    onChange={handleSelectLanguage}
+                    >
+
+                    </Select>
                     </Form.Item>
                   </div>
                   <div className="mb-4">
@@ -173,13 +251,49 @@ export default function Create() {
                       ]}
                       hasFeedback
                     >
-                      <Input
-                        name="country"
-                        type="text"
-                        className="text-gray-500 w-full rounded px-3 py-2  shadow focus:outline-none outline-none focus:shadow-none"
-                        placeholder="Enter country create movie"
-                        onChange={handleInputForm}
-                      ></Input>
+                       <Select
+                    defaultValue="USA"
+                    options={[
+                      {
+                        label:"Country",
+                        options:[
+                          {
+                            label:"USA",
+                            value:"USA"
+                          },
+                          {
+                            label:"India",
+                            value:"India"
+                          },
+                          {
+                            label:"China",
+                            value:"China"
+                          },
+                          {
+                            label:"England",
+                            value:"England"
+                          },
+                          {
+                            label:"VietNam",
+                            value:"VietNam"
+                          },
+                          {
+                            label:"Russia",
+                            value:"Russia"
+                          },
+                          {
+                            label:"Thailand",
+                            value:"Thailand"
+                          }
+                        ]
+
+                      }
+                    ]}
+                    className="text-gray-500 outline-none rounded py-2 px-3 w-full focus:outline-none focus:shadow-none shadow"
+                    onChange={handleSelectCountry}
+                    >
+
+                    </Select>
                     </Form.Item>
                   </div>
                   <div className="mb-4">
@@ -269,6 +383,7 @@ export default function Create() {
                         type="text"
                         className="text-gray-500 w-full rounded px-3 py-2  shadow focus:outline-none outline-none focus:shadow-none"
                         placeholder="Enter price of movie"
+                        onChange={handleInputForm}
                       ></Input>
                     </Form.Item>
                   </div>

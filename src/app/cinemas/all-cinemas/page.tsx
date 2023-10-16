@@ -6,11 +6,11 @@ import { IP_URL } from "@/config";
 import Link from "next/link";
 export default function AllCinema() {
     interface Cinemas{
-        cinema_name:String,
-        image:String,
-        phone:String,
-        address:String,
-        capacity:String
+        cinema_name:string,
+        image:string,
+        phone:string,
+        address:string,
+        capacity:string
     }
 
   const [cinema,setCinema]=useState<Cinemas[]>([])
@@ -46,7 +46,9 @@ export default function AllCinema() {
         dataIndex:"image",
         key:"image",
         render:(image:string)=>{
-            return  <img src={url_Image(image)} alt="" className="w-10 h-10 rounded-xl hover:cursor-zoom-in"/>
+            return (
+              <img src={url_Image(image)} alt="" className="w-10 h-10 rounded-xl hover:cursor-zoom-in"/>
+            ) 
           }
     },
     {
@@ -79,7 +81,7 @@ export default function AllCinema() {
 ];
   return (
     <div>
-      <div className="mx-auto flex h-screen">
+      <div className="mx-auto flex h-screen pt-14">
         <div className="w-1/4 bg-gray-700 mr-5">
           <Navbar />
         </div>

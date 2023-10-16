@@ -74,8 +74,8 @@ export default function Edit({params}:any) {
     }
 
   return (
-    <div>
-      <div className="mx-auto h-screen flex">
+    <>
+      <div className="mx-auto h-screen flex pt-14">
         <div className="w-1/4 bg-slate-700 mr-5">
             <Navbar/>
         </div>
@@ -132,6 +132,6 @@ export default function Edit({params}:any) {
             </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }

@@ -46,6 +46,17 @@ export default function Edit({params}:any) {
     setMovie({ ...movie, description: e.target.value });
   };
 
+
+  const handleSelectCountry=(e:React.ChangeEvent<HTMLSelectElement>)=>{
+    setMovie({ ...movie, country:e.target.value });
+  }
+  const handleSelectGenre=(e:React.ChangeEvent<HTMLSelectElement>)=>{
+    setMovie({ ...movie, genre:e.target.value });
+  }
+  const handleSelectLanguage=(e:React.ChangeEvent<HTMLSelectElement>)=>{
+    setMovie({ ...movie, language:e.target.value });
+  }
+
     useEffect(()=>{
       fetch(IP_URL + `admin/movie/${params.id}`, {
         method: "GET",
@@ -82,7 +93,6 @@ export default function Edit({params}:any) {
       .catch((error)=>{
         console.log(error);
       })
-      
     }
     
 
@@ -93,7 +103,7 @@ export default function Edit({params}:any) {
     
   return (
     <>
-      <div className="mx-auto h-screen flex">
+      <div className="mx-auto h-screen flex pt-14">
         <div className="w-1/4 bg-gray-700 mr-5">
          <Navbar/>
         </div>
@@ -118,7 +128,16 @@ export default function Edit({params}:any) {
                     >
                       Genre
                     </label>
-                    <input type="text" name="genre" required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500" value={movie.genre} onChange={handleInputForm}/>
+                    <select name="genre" className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500" onChange={handleSelectGenre} value={movie.genre}>
+                        <option value="Action" >Action</option>
+                        <option value="Horror" >Horror</option>
+                        <option value="Comedy" >Comedy</option>
+                        <option value="Drama" >Drama</option>
+                        <option value="Cartoon" >Cartoon</option>
+                        <option value="Blockbuster" >Blockbuster</option>
+                        <option value="Science fiction" >Science fiction</option>
+                    </select>
+                    {/* <input type="text" name="genre" required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500" value={movie.genre} onChange={handleInputForm}/> */}
                   </div>
                   <div className="mb-4">
                     <label
@@ -127,7 +146,15 @@ export default function Edit({params}:any) {
                     >
                       Language
                     </label>
-                    <input type="text" name="language" required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500" value={movie.language} onChange={handleInputForm}/>
+                    <select name="language" className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500" onChange={handleSelectLanguage} value={movie.language}>
+                        <option value="English" >English</option>
+                        <option value="Chinese" >Chinese</option>
+                        <option value="Japanese">Japanese</option>
+                        <option value="Korean" >Korean</option>
+                        <option value="VietNam">VietNam</option>
+                        <option value="Thailand">Thailand</option>
+                    </select>
+                    {/* <input type="text" name="language" required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500" value={movie.language} onChange={handleInputForm}/> */}
                    
                   </div>
                   <div className="mb-4">
@@ -137,7 +164,16 @@ export default function Edit({params}:any) {
                     >
                       Country
                     </label>
-                    <input type="text" name="country" required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500" value={movie.country} onChange={handleInputForm}/>
+                    <select name="country" className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500" onChange={handleSelectCountry} value={movie.country}>
+                        <option value="USA" >USA</option>
+                        <option value="India">India</option>
+                        <option value="China">China</option>
+                        <option value="England">England</option>
+                        <option value="VietNam" >VietNam</option>
+                        <option value="Thailand" >Thailand</option>
+                        <option value="Russia">Russia</option>
+                    </select>
+                    {/* <input type="text" name="country" required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500" value={movie.country} onChange={handleInputForm}/> */}
                   </div>
                   <div className="mb-4">
                     <label

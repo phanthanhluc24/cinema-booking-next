@@ -15,7 +15,7 @@ export default function Detail({ params }: any) {
   }
 
   const [detail, setDetail] = useState<movieDetail>();
-
+  const [numberStar,setNumberStar]=useState(0)
   useEffect(() => {
     fetch(IP_URL + `admin/movie/${params.id}`, {
       method: "GET",
@@ -26,6 +26,22 @@ export default function Detail({ params }: any) {
       .then((res) => res.json())
       .then((data) => {
         setDetail(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [params.id]);
+
+  useEffect(() => {
+    fetch(IP_URL + `admin/movie/star/${params.id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setNumberStar(data)
       })
       .catch((error) => {
         console.log(error);
@@ -105,7 +121,7 @@ export default function Detail({ params }: any) {
               <p>Duration</p>
             </div>
             <div className="w-2/3 ml-8 text-white">
-              <p>{detail?.rating}</p>
+              <p>{numberStar??0}</p>
               <p>{day + "-" + month + "-" + year}</p>
               <p>{detail?.genre}</p>
               <p>{detail?.country}</p>

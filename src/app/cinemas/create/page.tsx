@@ -48,8 +48,8 @@ export default function Create() {
     }
 
   return (
-    <div>
-      <div className="mx-auto h-screen flex">
+    <>
+      <div className="mx-auto h-screen flex pt-14">
         <div className="w-1/4 bg-slate-700 mr-5">
             <Navbar/>
         </div>
@@ -66,7 +66,7 @@ export default function Create() {
                                     required:true,message:"Field name is required"
                                 }]}
                                 >
-                                <Input  name="cinema_name" onChange={handleInputForm} className="rounded shadow px-3 py-2 outline-none border-none focus:outline-none focus:shadow-none" placeholder='Enter the name cinema'></Input>
+                                <Input  name="cinema_name" onChange={handleInputForm} className="text-gray-500 w-full rounded px-3 py-2  shadow focus:outline-none outline-none focus:shadow-none" placeholder='Enter the name cinema'></Input>
                                 </Form.Item>
                             </div>
                             <div className="mb-4">
@@ -77,7 +77,7 @@ export default function Create() {
                                     required:true,message:"Field address is required"
                                 }]}
                                 >
-                                <Input name="address" onChange={handleInputForm}  className="rounded shadow px-3 py-2 outline-none border-none focus:outline-none focus:shadow-none" placeholder='Enter the address of the cinema'></Input>
+                                <Input name="address" onChange={handleInputForm}  className="text-gray-500 w-full rounded px-3 py-2  shadow focus:outline-none outline-none focus:shadow-none" placeholder='Enter the address of the cinema'></Input>
                                 </Form.Item>
                             </div>
                             <div className="mb-4">
@@ -88,7 +88,7 @@ export default function Create() {
                                     required:true,message:"Field phone is required"
                                 }]}
                                 >
-                                <Input  name="phone" onChange={handleInputForm} className="rounded shadow px-3 py-2 outline-none border-none focus:outline-none focus:shadow-none" placeholder='Enter number phone'></Input>
+                                <Input  name="phone" onChange={handleInputForm} className="text-gray-500 w-full rounded px-3 py-2  shadow focus:outline-none outline-none focus:shadow-none" placeholder='Enter number phone'></Input>
                                 </Form.Item>
                             </div>
                             <div className="mb-4">
@@ -99,7 +99,7 @@ export default function Create() {
                                     required:true,message:"Field show time is required"
                                 }]}
                                 >
-                                <Input  name="show_times" onChange={handleInputForm} placeholder='Enter time show movie'  className="rounded shadow px-3 py-2 outline-none border-none focus:outline-none focus:shadow-none"></Input>
+                                <Input  name="show_times" onChange={handleInputForm} placeholder='Enter time show movie'  className="text-gray-500 w-full rounded px-3 py-2  shadow focus:outline-none outline-none focus:shadow-none"></Input>
                                 </Form.Item>
                             </div>
                         </div>
@@ -112,7 +112,7 @@ export default function Create() {
                                     required:true,message:"Field price is required"
                                 }]}
                                 >
-                                <Input name="ticket_price" onChange={handleInputForm} placeholder='Enter price '  className="rounded shadow px-3 py-2 outline-none border-none focus:outline-none focus:shadow-none"></Input>
+                                <Input name="ticket_price" onChange={handleInputForm} placeholder='Enter price '  className="text-gray-500 w-full rounded px-3 py-2  shadow focus:outline-none outline-none focus:shadow-none"></Input>
                                 </Form.Item>
                             </div>
                             <div className="mb-4">
@@ -123,7 +123,7 @@ export default function Create() {
                                     required:true,message:"Field service is required"
                                 }]}
                                 >
-                                <Input onChange={handleInputForm} name="service" placeholder='Enter service free' className="rounded shadow px-3 py-2 outline-none border-none focus:outline-none focus:shadow-none"></Input>
+                                <Input onChange={handleInputForm} name="service" placeholder='Enter service free' className="text-gray-500 w-full rounded px-3 py-2  shadow focus:outline-none outline-none focus:shadow-none"></Input>
                                 </Form.Item>
                             </div>
                             <div className="mb-4">
@@ -134,7 +134,7 @@ export default function Create() {
                                     required:true,message:"Field capacity is required"
                                 }]}
                                 >
-                                <Input onChange={handleInputForm} name="capacity" placeholder='Enter number capacity'  className="rounded shadow px-3 py-2 outline-none border-none focus:outline-none focus:shadow-none"></Input>
+                                <Input onChange={handleInputForm} name="capacity" placeholder='Enter number capacity'  className="text-gray-500 w-full rounded px-3 py-2  shadow focus:outline-none outline-none focus:shadow-none"></Input>
                                 </Form.Item>
                             </div>
                             <div className="mb-4">
@@ -145,7 +145,7 @@ export default function Create() {
                                     required:true,message:"Field map is required"
                                 }]}
                                 >
-                                <Input name="map" onChange={handleInputForm} placeholder='Enter link map of cinema'  className="rounded shadow px-3 py-2 outline-none border-none focus:outline-none focus:shadow-none"></Input>
+                                <Input name="map" onChange={handleInputForm} placeholder='Enter link map of cinema'  className="text-gray-500 w-full rounded px-3 py-2  shadow focus:outline-none outline-none focus:shadow-none"></Input>
                                 </Form.Item>
                             </div>
                             <div className="mb-4">
@@ -162,12 +162,23 @@ export default function Create() {
                         </div>
                     </div>
                     <div className="flex justify-center items-center">
-                        <Button htmlType='submit' className='bg-green-500'>Create</Button>
+                    <Button
+                  htmlType="submit"
+                  className="uppercase text-white bg-green-500"
+                >
+                  Create
+                </Button>{" "}
+                <Button
+                  htmlType="button"
+                  className="uppercase text-white bg-gray-500"
+                >
+                  Cancel
+                </Button>
                     </div>
                 </Form>
             </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }

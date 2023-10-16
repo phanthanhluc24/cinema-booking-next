@@ -36,10 +36,6 @@ export default function allMovies() {
   const urlImage = (url: string) => {
     return `${url}`;
   };
-
-  const _id=(_id:string)=>{
-    return `${_id}`
-  }
   const columns = [
     {
       title: "Title",
@@ -94,7 +90,7 @@ export default function allMovies() {
   ];
   return (
     <div>
-      <div className="mx-auto flex h-screen">
+      <div className="mx-auto flex h-screen pt-14">
         <div className="w-1/4 bg-gray-700 mr-5">
           <Navbar />
         </div>

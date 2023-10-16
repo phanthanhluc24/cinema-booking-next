@@ -26,7 +26,7 @@ export default function Upcoming() {
       },[])
   return (
     <div>
-      <div className="mx-auto bg-gray-900 min-h-screen">
+      <div className="mx-auto bg-gray-900 min-h-screen pt-20">
         <div className="grid grid-cols-5 gap-1 pt-10 ml-6">
             {streamingMovie.map((data,index)=>(
             <div className="col-span-1">

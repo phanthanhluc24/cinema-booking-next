@@ -27,3 +27,42 @@
   .image-detail-movie{
     cursor: pointer;
   }
+
+@keyframes wave{
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.wave-effect{
+    animation: wave 1s ease infinite;
+}
+
+.left {
+    text-align: left;
+    background-color: #d4912c;
+    padding: 8px;
+    margin: 8px;
+    /* min-width:150;
+    min-height: 50; */
+    border-radius:8px;
+    display:block
+  }
+  
+  .right {
+    text-align: right;
+    background-color: #11ccec;
+    padding: 8px;
+    margin: 8px;
+    /* min-width:150;
+    min-height: 50; */
+    border-radius:8px;
+    display:block
+
+  }

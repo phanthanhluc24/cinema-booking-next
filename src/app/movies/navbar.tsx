@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 export default function Navbar() {
@@ -11,32 +12,32 @@ export default function Navbar() {
             </div>
             <hr className="mt-2" />
             <div className="flex flex-col">
-              <ul className="mx-auto w-2/3 text-white space-y-2">
-                <li className="group relative">
+              <ul className="mx-auto w-2/3 text-white space-y-2 pt-10">
+                <li className="group relative rounded bg-slate-400 pl-3 px-4 py-2">
                   Movie
-                  <ul className="font-bold hidden absolute z-10 left-0 ml-5 border border-gray-300 rounded-lg shadow-lg py-1 group-hover:block">
-                    <li className="px-4 py-2 hover:bg-gray-100 w-60 text-gray-800 rounded">
+                  <ul className="font-bold hidden absolute z-10 left-0 ml-5 border border-gray-300 rounded-lg shadow-lg py-1 group-hover:block bg-slate-400">
+                    <Link href={"/movies/create"} className="px-4 py-2 hover:bg-gray-100 w-60 text-gray-800 rounded cursor-pointer block">
                       Add new movie
-                    </li>
-                    <li className="px-4 py-2 hover:bg-gray-100 text-gray-800 rounded">
+                    </Link>
+                    <Link href={"/movies/all-movie"} className="px-4 py-2 hover:bg-gray-100 text-gray-800 rounded cursor-pointer block">
                       All movie
-                    </li>
-                    <li className="px-4 py-2 hover:bg-gray-100 text-gray-800 rounded">
+                    </Link>
+                    <Link href={""} className="px-4 py-2 hover:bg-gray-100 text-gray-800 rounded cursor-pointer block">
                       Top movie
-                    </li>
+                    </Link>
                   </ul>
                 </li>
-                <li className='group relative'>
+                <li className='group relative rounded bg-slate-400 pl-3 px-4 py-2'>
                   Cinema
-                  <ul className='hidden absolute ml-5 font-bold z-10 left-0 group-hover:block border border-gray-300 rounded-lg py-1'>
-                    <li className='px-4 py-2 hover:bg-gray-100 text-gray-800 rounded'>
-                      Add new cinema</li>
-                    <li className='px-4 py-2 hover:bg-gray-100 text-gray-800 rounded'>
+                  <ul className='font-bold hidden absolute z-10 left-0 ml-5 border border-gray-300 rounded-lg shadow-lg py-1 group-hover:block bg-slate-400'>
+                  <Link href={"/cinemas/create"} className="px-4 py-2 hover:bg-gray-100 w-60 text-gray-800 rounded cursor-pointer block">
+                      Add new cinema</Link>
+                  <Link href={"/cinemas/all-cinemas"} className="px-4 py-2 hover:bg-gray-100 w-60 text-gray-800 rounded cursor-pointer block">
                       All cinema
-                    </li>
+                  </Link>
                   </ul>
                   </li>
-                <li>User</li>
+                <li className='group relative rounded bg-slate-400 pl-3 px-4 py-2'>User</li>
                 <li></li>
                 <li></li>
               </ul>

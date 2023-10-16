@@ -8,8 +8,8 @@ export default function Header() {
   const already = cookie.get("token");
   return (
     <>
-      <nav className="bg-slate-700">
-        <ul className="flex items-center mx-auto w-2/3 justify-around uppercase h-14">
+      <nav className="bg-slate-700 fixed min-w-full z-10">
+        <ul className="flex items-center mx-auto w-2/3 justify-around uppercase h-14 ">
           <li className="ml-4 hover:cursor-pointer">
             <a href="#" className="flex">
               <h4 className="text-blue-400 text-xl">XH</h4>
