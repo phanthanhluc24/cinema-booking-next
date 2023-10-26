@@ -43,7 +43,7 @@ export default function Movies() {
     })
   },[])
   return (
-    <div className="bg-slate-900">
+    <div className="bg-slate-900 min-h-screen">
       <h4 className="text-white ml-4 pt-4 text-2xl">Top Rate <span className='text-yellow-500'>&#9733;</span> </h4>
       <div className="mx-auto">
           <div className="flex pt-10 pl-6">

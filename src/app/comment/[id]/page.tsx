@@ -39,7 +39,7 @@ export default function Comment({params}:any) {
         .then((data)=>{
           if (data.status==201) {
             toast("Comment successfully!",{hideProgressBar:false,autoClose:3000,type:"success"})
-            route.back();
+            route.push("/")
           }
         })
         .catch((error)=>{
@@ -48,7 +48,7 @@ export default function Comment({params}:any) {
         })
       }else{
         toast("Please login before comment",{hideProgressBar:false,autoClose:3000,type:"warning"})
-
+        route.push("/auth/login/"+id)
       }
     }
 

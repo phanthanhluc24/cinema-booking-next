@@ -4,13 +4,16 @@ import React, { useState, useRef } from "react";
 import Cookies from "universal-cookie";
 import Link from "next/link";
 import { IP_URL } from "@/config";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 export default function Login() {
   interface Login {
     email: "";
     password: "";
   }
+
+  const param:any=useParams()
+  const url = decodeURIComponent(param.slug);
   const router = useRouter();
   const cookie = new Cookies();
   const formRef = useRef<FormInstance | null>(null);
@@ -46,7 +49,11 @@ export default function Login() {
         if (data.role=="ADM") {
           router.push("/movies/all-movie")
         }else{
-          router.push("/");
+          if (url==="user-login") {
+            router.push("/");
+          }else{
+            router.push("/comment/"+url);
+          }
         }
 
       })
@@ -56,7 +63,7 @@ export default function Login() {
   };
   return (
     <>
-      <div className="mx-auto  bg-gray-900 h-screen">
+      <div className="mx-auto  bg-gray-900 min-h-screen">
         <div className="mx-auto w-2/3 flex justify-center">
           <Form
             ref={formRef}

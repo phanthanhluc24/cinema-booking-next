@@ -43,7 +43,7 @@ export default function Header() {
               </>
             ) : (
               <p className="ml-6 hover:cursor-pointer hover:animate-shake text-white">
-                <Link href="/auth/login">Login</Link>
+                <Link href="/auth/login/user-login">Login</Link>
               </p>
             )}
           </li>

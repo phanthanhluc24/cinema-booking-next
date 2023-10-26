@@ -34,7 +34,7 @@ export default function Register() {
             toast("Register account successfully",{hideProgressBar:false,autoClose:3000,type:"success"})
             if (formRef.current) {
                 formRef.current.resetFields()
-                navigate.push("/auth/login")
+                navigate.push("/auth/login/user-login")
             }
         })
         .catch((error)=>{

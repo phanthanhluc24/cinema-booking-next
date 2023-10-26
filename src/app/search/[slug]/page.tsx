@@ -37,7 +37,7 @@ export default function Search() {
       });
   }, []);
   return (
-    <div className="bg-gray-900 min-h-screen">
+    <div className="bg-gray-900 min-h-screen pt-16">
       {searchData.length < 1 ? (
         <div className="pt-10 mx-auto w-2/3">
           <div className="flex justify-center items-center">

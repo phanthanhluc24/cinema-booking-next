@@ -30,7 +30,7 @@ export default function SearchForm() {
       placeholder="Search movie..."
       onChange={handleInputForm}
     />
-    <button type="submit" className="fa-solid fa-magnifying-glass right-3 absolute top-1/2 transform -translate-y-1/2 text-sm hover:cursor-pointer"></button>
+    <button type="submit" className="fa-solid fa-magnifying-glass right-3 absolute top-1/2 transform -translate-y-1/2 text-sm cursor-pointer"></button>
     </form>
   )
 }

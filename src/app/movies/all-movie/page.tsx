@@ -91,7 +91,7 @@ export default function allMovies() {
   return (
     <div>
       <div className="mx-auto flex h-screen pt-14">
-        <div className="w-1/4 bg-gray-700 mr-5">
+        <div className="w-1/4 bg-gray-900 mr-5">
           <Navbar />
         </div>
         <div className="w-3/4">
