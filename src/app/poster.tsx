@@ -27,17 +27,17 @@ export function Poster() {
   },[])
   return (
     <div className="pt-14">
-      <Carousel autoplay>
-        {randomMovie.map((data,index)=>(
-          <div>
-            <img
-              src={`${data.image}`}
-              alt=""
-              className="w-screen h-[750px]"
-            />
-          </div>
-        ))}
-      </Carousel>
+        <Carousel autoplay>
+          {randomMovie.map((data,index)=>(
+            <div>
+              <img
+                src={`${data.image}`}
+                alt=""
+                className="w-screen h-screen"
+              />
+            </div>
+          ))}
+        </Carousel>
       <Movies />
       {/* <Chat/> */}
     </div>

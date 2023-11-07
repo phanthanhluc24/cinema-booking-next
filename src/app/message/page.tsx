@@ -13,11 +13,16 @@ export default function Message() {
     interface User{
         _id:string,
     }
+
+    interface ChatMessage {
+      senderId: string;
+      text: string;
+    }
     const [localUser, setLocalUser]=useState<User>({_id:""})
     const [chats,setChats]=useState([])
     const [currentChat,setCurrentChat]=useState([])
     const [sendMessage,setSendMessage]=useState(null)
-    const [receiveMessage,setReceiveMessage]=useState(null)
+    const [receiveMessage,setReceiveMessage]=useState<ChatMessage[]>([])
 
     
     if (token) {
@@ -69,18 +74,15 @@ export default function Message() {
     
     // receive message from socket server
     useEffect(()=>{
-      console.log("Where are you!");
-      socket.on("receive-message",(data)=>{
-        console.log("Receive data "+data);
+      // const receiveMessage=(data:any)
+      socket.on("receive-message",(data:ChatMessage)=>{
         try {
-          setReceiveMessage(data)
+          setReceiveMessage((preMessage)=>[...preMessage,{senderId:data.senderId,text:data.text},
+          ])
         } catch (error) {
           console.log(error);
         }
       })
-      // return () => {
-      //   socket.off("received_message");
-      // };
     },[])
 
   return (

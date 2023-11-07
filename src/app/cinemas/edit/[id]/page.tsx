@@ -86,41 +86,41 @@ export default function Edit({params}:any) {
                         <div className="col-span-1">
                             <div className="mb-4">
                                 <label className='font-bold text-gray-500 block mb-2'>Cinema name</label>
-                                <input onChange={handleInputForm} type="text" value={cinema.cinema_name} name='cinema_name' required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500"/>
+                                <input onChange={handleInputForm} placeholder='Cinema name' type="text" value={cinema.cinema_name} name='cinema_name' required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500"/>
                             </div>
                             <div className="mb-4">
                                 <label className='font-bold text-gray-500 block mb-2'>Address</label>
-                               <input onChange={handleInputForm} type="text" value={cinema.address} name='address' required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500"/>
+                               <input onChange={handleInputForm} type="text" placeholder='Address' value={cinema.address} name='address' required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500"/>
                             </div>
                             <div className="mb-4">
                                 <label className='font-bold text-gray-500 block mb-2'>Phone</label>
-                               <input  onChange={handleInputForm}type="text" value={cinema.phone} name='phone' required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500"/>
+                               <input  onChange={handleInputForm}type="text" placeholder='Phone' value={cinema.phone} name='phone' required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500"/>
                             </div>
                             <div className="mb-4">
                                 <label className='font-bold text-gray-500 block mb-2'>Show time</label>
-                                <input onChange={handleInputForm} type="text" value={cinema.show_times} name='show_times' required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500"/>
+                                <input onChange={handleInputForm} placeholder='Show time' type="text" value={cinema.show_times} name='show_times' required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500"/>
                             </div>
                         </div>
                         <div className="col-span-1">
                         <div className="mb-4">
                             <label className='font-bold text-gray-500 block mb-2'>Ticket price</label>
-                                <input onChange={handleInputForm} type="text" value={cinema.ticket_price} name='ticket_price' required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500"/>
+                                <input onChange={handleInputForm} placeholder='Ticket price' type="text" value={cinema.ticket_price} name='ticket_price' required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500"/>
                             </div>
                             <div className="mb-4">
                                 <label className='font-bold text-gray-500 block mb-2'>Service</label>
-                                <input onChange={handleInputForm} type="text" value={cinema.service} name='service' required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500"/>
+                                <input onChange={handleInputForm} type="text" placeholder='Service' value={cinema.service} name='service' required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500"/>
                             </div>
                             <div className="mb-4">
                                 <label className='font-bold text-gray-500 block mb-2'>Capacity</label>
-                               <input onChange={handleInputForm} type="text" value={cinema.capacity} name='capacity' required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500"/>
+                               <input onChange={handleInputForm} type="text" placeholder='Capacity' value={cinema.capacity} name='capacity' required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500"/>
                             </div>
                             <div className="mb-4">
                                 <label className='font-bold text-gray-500 block mb-2'>Map</label>
-                                <input  onChange={handleInputForm}type="text" value={cinema.map} name='map' required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500"/>
+                                <input  onChange={handleInputForm}type="text" placeholder='Map' value={cinema.map} name='map' required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500"/>
                             </div>
                             <div className="mb-4">
                                 <label className='font-bold text-gray-500 block mb-2'>Image</label>
-                                <input  onChange={handleInputForm}type="text" value={cinema.image} name='image' required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500"/>
+                                <input  onChange={handleInputForm}type="text" placeholder='Image' value={cinema.image} name='image' required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500"/>
                             </div>
                         </div>
                     </div>

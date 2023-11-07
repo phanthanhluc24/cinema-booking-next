@@ -119,7 +119,7 @@ export default function Edit({params}:any) {
                     >
                       Name of movie
                     </label>
-                    <input type="text" name="title" required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500" value={movie.title} onChange={handleInputForm}/>
+                    <input type="text" name="title" required={true} placeholder="Title" className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500" value={movie.title} onChange={handleInputForm}/>
                   </div>
                   <div className="mb-4">
                     <label
@@ -128,7 +128,7 @@ export default function Edit({params}:any) {
                     >
                       Genre
                     </label>
-                    <select name="genre" className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500" onChange={handleSelectGenre} value={movie.genre}>
+                    <select name="genre" title="Genre" className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500" onChange={handleSelectGenre} value={movie.genre}>
                         <option value="Action" >Action</option>
                         <option value="Horror" >Horror</option>
                         <option value="Comedy" >Comedy</option>
@@ -146,7 +146,7 @@ export default function Edit({params}:any) {
                     >
                       Language
                     </label>
-                    <select name="language" className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500" onChange={handleSelectLanguage} value={movie.language}>
+                    <select name="language" title="Language" className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500" onChange={handleSelectLanguage} value={movie.language}>
                         <option value="English" >English</option>
                         <option value="Chinese" >Chinese</option>
                         <option value="Japanese">Japanese</option>
@@ -164,7 +164,7 @@ export default function Edit({params}:any) {
                     >
                       Country
                     </label>
-                    <select name="country" className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500" onChange={handleSelectCountry} value={movie.country}>
+                    <select name="country" title="Country" className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500" onChange={handleSelectCountry} value={movie.country}>
                         <option value="USA" >USA</option>
                         <option value="India">India</option>
                         <option value="China">China</option>
@@ -182,7 +182,7 @@ export default function Edit({params}:any) {
                     >
                       Actors
                     </label>
-                   <input type="text" name="actors" required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500" value={movie.actors} onChange={handleInputForm}/>
+                   <input type="text" name="actors" required={true} placeholder="Actors" className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500" value={movie.actors} onChange={handleInputForm}/>
                   </div>
                 </div>
                 <div className="col-span-1 mt-1.5">
@@ -193,7 +193,7 @@ export default function Edit({params}:any) {
                     >
                       Release date
                     </label>
-                    <input type="date" value={date} name="release_day" onChange={handleInputForm} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500"/>
+                    <input type="date" value={date} name="release_day" placeholder="Day release day" onChange={handleInputForm} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500"/>
                   </div>
                   <div className="mb-4">
                     <label
@@ -202,7 +202,7 @@ export default function Edit({params}:any) {
                     >
                       Duration
                     </label>
-                    <input type="text" name="duration" required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500" value={movie.duration} onChange={handleInputForm}/>
+                    <input type="text" name="duration" required={true} placeholder="Duration film" className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500" value={movie.duration} onChange={handleInputForm}/>
                   </div>
                   <div className="mb-4">
                     <label
@@ -211,7 +211,7 @@ export default function Edit({params}:any) {
                     >
                       Price
                     </label>
-                    <input type="text" name="price" required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500" value={movie.price} onChange={handleInputForm}/>
+                    <input type="text" name="price" required={true} placeholder="Price film" className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500" value={movie.price} onChange={handleInputForm}/>
                   </div>
                   <div className="mb-4">
                     <label
@@ -220,7 +220,7 @@ export default function Edit({params}:any) {
                     >
                       Movie url
                     </label>
-                    <input type="text" name="movie_url" required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500" value={movie.movie_url} onChange={handleInputForm}/>
+                    <input type="text" name="movie_url" placeholder="Movie url" required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500" value={movie.movie_url} onChange={handleInputForm}/>
                   </div>
                   <div className="mb-4">
                     <label
@@ -229,7 +229,7 @@ export default function Edit({params}:any) {
                     >
                       Image url
                     </label>
-                    <input type="text" name="image" required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500" value={movie.image} onChange={handleInputForm}/>
+                    <input type="text" name="image" placeholder="Image film" required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500" value={movie.image} onChange={handleInputForm}/>
                   </div>
                   <div className="mb-4">
                     <label
@@ -238,7 +238,7 @@ export default function Edit({params}:any) {
                     >
                       Director
                     </label>
-                    <input type="text" name="director" required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500" value={movie.director} onChange={handleInputForm}/>
+                    <input type="text" name="director" placeholder="Director film" required={true} className="w-full h-9 outline-none border rounded pl-3 focus:border-gray-500" value={movie.director} onChange={handleInputForm}/>
                   </div>
                 </div>
               </div>
@@ -246,7 +246,7 @@ export default function Edit({params}:any) {
                 <label htmlFor="" className="text-gray-500 text-lg font-bold block">
                   Description
                 </label>
-                <textarea name="description" id="" required={true} cols={30} className="w-full  outline-none border rounded pl-3 focus:border-gray-500 h-32" rows={10} value={movie.description} onChange={handleTextArea}></textarea>
+                <textarea name="description" id=""  placeholder="Description film" required={true} cols={30} className="w-full  outline-none border rounded pl-3 focus:border-gray-500 h-32" rows={10} value={movie.description} onChange={handleTextArea}></textarea>
               </div>
 
               <div className="flex justify-center items-center gap-3 ">

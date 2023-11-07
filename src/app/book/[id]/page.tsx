@@ -211,10 +211,27 @@ export default function Book({ params }: any) {
           toast("Booking success!",{hideProgressBar:false,autoClose:3000,type:"success"})
           router.back()
         } 
-      })
+      })  
       .catch((error)=>{
         console.log(error);
       })
+
+      // fetch(IP_URL+"payment",{
+      //   method:"POST",
+      //   headers:{
+      //     "Content-Type":"application.json"
+      //   },
+      //   body:JSON.stringify(booking.ticket_price)
+      // })
+      // .then((res)=>res.json())
+      // .then((data)=>{
+      //   console.log(data);
+      //   router.push(data)
+      // })
+      // .catch((error)=>{
+      //   console.log(error);
+        
+      // })
     }
   }
   return (
@@ -235,6 +252,7 @@ export default function Book({ params }: any) {
                   id="movieId"
                   className="px-3 py-2 w-44 rounded text-white bg-gray-600"
                   onChange={handleSelectOption}
+                  title="Choose"
                 >
                   {cinema.map((data, index) => (
                     <option
@@ -256,6 +274,7 @@ export default function Book({ params }: any) {
                   id="show_times"
                   className="px-3 py-2 w-44 rounded text-white bg-gray-600"
                   onChange={handleGetTime}
+                  title="Choose"
                 >
                   {timeShow.map((data, index) => (
                     <option value={data} key={index} className="pt-3">
@@ -266,7 +285,7 @@ export default function Book({ params }: any) {
               </div>
               <div className="mb-4">
                 <label htmlFor="" className="font-bold text-2xl text-red-500 ">
-                  Total price: <span className="ticket_price">{total + ".000 VND"}</span>{" "}
+                  Total price: <span className="ticket_price">{total + "000"}</span>{" "}
                 </label>
               </div>
               <div className="mb-4">

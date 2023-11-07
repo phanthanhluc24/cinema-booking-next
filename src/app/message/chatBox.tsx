@@ -14,7 +14,7 @@ export default function ChatBox({
     _id: string;
     full_name: string;
   }
-
+  console.log("Receive data "+ JSON.stringify(receiveMessage));
   interface ChatMessage {
     senderId: string;
     text: string;
@@ -41,7 +41,7 @@ export default function ChatBox({
           console.log(error);
         });
     }
-  }, [chat, currentUser]);
+  }, [chat, currentUser,receiveMessage]);
 
   useEffect(() => {
     if (chat && chat.members && currentUser) {

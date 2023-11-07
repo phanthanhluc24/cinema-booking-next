@@ -66,3 +66,15 @@
     display:block
 
   }
+
+  .box {
+    width: 96%;
+    margin: 0 auto;
+    padding: 10px 10px;
+    background-color: #C4DBFE;
+    margin: 10px auto;            
+}
+
+.answer {
+    background-color: aquamarine;
+}
