@@ -14,7 +14,6 @@ export default function ChatBox({
     _id: string;
     full_name: string;
   }
-  console.log("Receive data "+ JSON.stringify(receiveMessage));
   interface ChatMessage {
     senderId: string;
     text: string;

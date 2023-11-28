@@ -6,7 +6,7 @@ export default function Conversation({ currentUser, data }: any) {
     _id: string;
     full_name: string;
   }
-  const [userData, setUserDate] = useState<User[]>([]);
+  const [userData, setUserData] = useState<User[]>([]);
   useEffect(() => {
     const userId = data.members.find((id: any) => id !== currentUser);
     fetch(IP_URL + `auth/user/list-user/${userId}`, {
@@ -17,7 +17,7 @@ export default function Conversation({ currentUser, data }: any) {
     })
       .then((res) => res.json())
       .then((data) => {
-        setUserDate(data);
+        setUserData(data);
       })
       .catch((error) => {
         console.log(error);

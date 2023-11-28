@@ -5,6 +5,7 @@ import Cookies from 'universal-cookie'
 import Conversation from './conversation'
 import ChatBox from './chatBox'
 import { io } from "socket.io-client";
+import { ContactUser } from './contactUser'
 const socket = io("http://localhost:5000");
 export default function Message() {
     const cookie=new Cookies()
@@ -106,7 +107,12 @@ export default function Message() {
               <ChatBox chat={currentChat} currentUser={localUser._id} setSendMessage={setSendMessage} receiveMessage={receiveMessage}/>
             </div>
         </div>
-        <div className=" col-span-1 bg-white min-h-[814px]"></div>
+        <div className=" col-span-1 bg-white min-h-[814px]">
+        <div className="text-center pt-10">
+            <p className="text-xl font-bold">Contact User</p>
+        </div>
+            <ContactUser setCurrentChat={setCurrentChat} currentUser={localUser._id}/>
+        </div>
       </div>
     </div>
   </>

@@ -15,9 +15,10 @@ export default function page() {
 const handleAsks=()=>{
     const mainQuestion={
         question:`Chào bạn, tôi đang hư ${question.what} và tôi mua nó ${question.when}, 
-        lần gần nhất mà tôi tôi sửa nó là: ${question.near} và 
-        cuối cùng là tôi sẽ mô tả nó cho bạn: ${question.desc}. Bạn xem giúp tôi nó đang hư gì. 
-        Có cần sửa chưa hay thử cách nào trước, nớ có ảnh huowgr đến môi trường không.`
+        lần gần nhất mà tôi sửa nó là: ${question.near} và 
+        cuối cùng là tôi sẽ mô tả nó cho bạn: ${question.desc}. 
+        Bạn xem giúp tôi nó đang hư gì. 
+        Có cần sửa chưa hay thử cách nào trước, nớ có ảnh hưởng đến môi trường không.`
     }
     
     if(question===null){return}
