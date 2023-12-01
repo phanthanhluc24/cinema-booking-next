@@ -29,6 +29,7 @@ export default function Logout() {
             toast("Logout successfully",{hideProgressBar:false,autoClose:3000,type:"success"})
             cookie.remove("token",{maxAge:3600,path:"/"})
             router.push("/")
+            router.refresh()
             }
         })
         .catch((error)=>{

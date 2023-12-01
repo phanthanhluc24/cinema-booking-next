@@ -176,6 +176,7 @@ export default function Book({ params }: any) {
 
 
   const handleSubmitForm=(e:React.FormEvent<HTMLFormElement>)=>{
+    e.preventDefault()
     const seat=document.querySelector(".seatArray")?.innerHTML
     const price=document.querySelector(".ticket_price")?.innerHTML
     const cinemaId=document.querySelector("#movieId") as HTMLSelectElement

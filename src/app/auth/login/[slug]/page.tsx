@@ -6,6 +6,7 @@ import Link from "next/link";
 import { IP_URL } from "@/config";
 import { useParams, useRouter } from "next/navigation";
 import { toast } from "react-toastify";
+import Header from "@/app/header";
 export default function Login() {
   interface Login {
     email: "";
@@ -23,6 +24,7 @@ export default function Login() {
     const data = { ...login, [e.target.name]: e.target.value };
     setLogin(data);
   };
+  const [error,setError]=useState("")
   const expireDay = new Date();
   expireDay.setHours(expireDay.getHours() + 1);
   const handleFormSubmit = () => {
@@ -35,25 +37,29 @@ export default function Login() {
     })
       .then((res) => res.json())
       .then((data) => {
-        cookie.set("token", data.token, { maxAge: 3600, path: "/" });
-        toast("Login successfully", {
-          hideProgressBar: false,
-          autoClose: 3000,
-          type: "success",
-        });
-        console.log(data);
-        
+        if (data.status===401) {
+            setError(data.error)
+        }else{
+          cookie.set("token", data.token, { maxAge: 3600, path: "/" });
+          toast("Login successfully", {
+            hideProgressBar: false,
+            autoClose: 3000,
+            type: "success",
+          });
+          console.log(data);
+          if (data.role=="ADM") {
+            router.push("/movies/all-movie")
+          }else{
+            if (url==="user-login") {
+              router.push("/")
+              router.refresh()
+            }else{
+              router.push("/comment/"+url);
+            }
+          }
+        }
         if (formRef.current) {
           formRef.current.resetFields();
-        }
-        if (data.role=="ADM") {
-          router.push("/movies/all-movie")
-        }else{
-          if (url==="user-login") {
-            router.push("/");
-          }else{
-            router.push("/comment/"+url);
-          }
         }
 
       })
@@ -71,6 +77,7 @@ export default function Login() {
             className="shadow-xl rounded-lg bg-gray-300 mt-32 w-96"
           >
             <div className="p-5">
+              <span className="text-red-500">{error}</span>
               <div className="mb-4">
                 <label
                   htmlFor=""
