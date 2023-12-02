@@ -29,11 +29,11 @@ export function Poster() {
     <div className="pt-14">
         <Carousel autoplay>
           {randomMovie.map((data,index)=>(
-            <div>
+            <div className="">
               <img
                 src={`${data.image}`}
                 alt=""
-                className="w-screen h-screen"
+                className="w-screen h-screen object-contain"
               />
             </div>
           ))}
