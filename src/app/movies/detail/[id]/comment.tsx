@@ -29,12 +29,18 @@ export default function CommentMovie({_id}:any) {
         })
     },[_id])
   return (
-    <div className='pl-24 pt-6'>
+    <div className='pl-8 pt-6'>
         {allComment && Array.isArray(allComment) ? (
             allComment.map((comment, index) => (
                 <div key={index}>
-                    <h3 className='text-white text-xl w-max rounded p-1 border'>{comment.userId.full_name}</h3>
-                    <h2 className='pl-3 text-white'>{comment.comment}</h2>
+                    <div className='flex'>
+                    <div className='w-[40px] h-[40px] rounded-full text-white flex text-center justify-center items-center bg-slate-700'>
+                        {comment.userId.full_name.charAt(0)}
+                        </div>
+                    <h3 className='text-slate-700 flex items-center mx-2 justify-center text-md font-bold w-max rounded p-1'>{comment.userId.full_name}</h3>
+                    </div>
+                    <h2 className='pl-3 mx-10 text-slate-700'>{comment.comment}</h2>
+                    
                 </div>
             ))
         ) : (
